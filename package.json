@@ -1,8 +1,20 @@
 {
   "name": "practica5",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "Está práctica contiene los siguientes dos puntos de la documentación:",
+  "homepage": "https://github.com/jvazmor497/React5#readme",
+  "bugs": {
+    "url": "https://github.com/jvazmor497/React5/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvazmor497/React5.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
