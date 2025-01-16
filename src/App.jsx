@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from "react";
 import "./App.css";
 
 const characters = [
   {
     nombre: "Monkey D. Luffy",
-    imagen: "/images/characters/luffy.jpg",
+    imagen: "images/characters/luffy.jpg",
     bounty: "3.000.000.000",
     saga: ["Romance Dawn", "East Blue", "Enies Lobby", "Marineford"],
     habilidades: [
@@ -17,7 +16,7 @@ const characters = [
   },
   {
     nombre: "Roronoa Zoro",
-    imagen: "/images/characters/zoro.jpg",
+    imagen: "images/characters/zoro.jpg",
     bounty: "1.111.000.000",
     saga: ["Romance Dawn", "Alabasta", "Dressrosa"],
     habilidades: ["Espadachín de tres espadas", "Haki de Armamento"],
@@ -26,7 +25,7 @@ const characters = [
   },
   {
     nombre: "Nami",
-    imagen: "/images/characters/nami.jpg",
+    imagen: "images/characters/nami.jpg",
     bounty: "366.000.000",
     saga: ["Arlong Park", "Skypiea", "Dressrosa"],
     habilidades: ["Navegación", "Ladrón", "Cartografía"],
@@ -35,7 +34,7 @@ const characters = [
   },
   {
     nombre: "Usopp",
-    imagen: "/images/characters/usopp.jpg",
+    imagen: "images/characters/usopp.jpg",
     bounty: "500.000.000",
     saga: ["Syrup Village", "Alabasta", "Water 7"],
     habilidades: ["Francotirador", "Inventor", "Mentiroso"],
@@ -44,7 +43,7 @@ const characters = [
   },
   {
     nombre: "Sanji",
-    imagen: "/images/characters/sanji.jpg",
+    imagen: "images/characters/sanji.jpg",
     bounty: "1.032.000.000",
     saga: ["Baratie", "Alabasta", "Whole Cake Island"],
     habilidades: ["Cocinero", "Luchador", "Haki de Observación"],
@@ -53,7 +52,7 @@ const characters = [
   },
   {
     nombre: "Tony Tony Chopper",
-    imagen: "/images/characters/chopper.jpg",
+    imagen: "images/characters/chopper.jpg",
     bounty: "1.000",
     saga: ["Drum Island", "Skypiea", "Water 7"],
     habilidades: ["Hito Hito no Mi", "Transformaciones", "Medicina"],
@@ -62,7 +61,7 @@ const characters = [
   },
   {
     nombre: "Nico Robin",
-    imagen: "/images/characters/robin.jpg",
+    imagen: "images/characters/robin.jpg",
     bounty: "930.000.000",
     saga: ["Alabasta", "Enies Lobby", "Impel Down"],
     habilidades: ["Hana Hana no Mi", "Arqueología", "Haki de Armamento"],
@@ -71,7 +70,7 @@ const characters = [
   },
   {
     nombre: "Franky",
-    imagen: "/images/characters/franky.jpg",
+    imagen: "images/characters/franky.jpg",
     bounty: "394.000.000",
     saga: ["Water 7", "Enies Lobby", "Dressrosa"],
     habilidades: ["Cyborg", "Carpintería", "Superfuerza"],
@@ -80,7 +79,7 @@ const characters = [
   },
   {
     nombre: "Brook",
-    imagen: "/images/characters/brook.jpg",
+    imagen: "images/characters/brook.jpg",
     bounty: "383.000.000",
     saga: ["Thriller Bark", "Sabaody Archipelago", "Dressrosa"],
     habilidades: ["Revive Revive no Mi", "Espadachín", "Música"],
@@ -89,7 +88,7 @@ const characters = [
   },
   {
     nombre: "Jinbe",
-    imagen: "/images/characters/jinbe.jpg",
+    imagen: "images/characters/jinbe.jpg",
     bounty: "1.100.000.000",
     saga: ["Impel Down", "Marineford", "Whole Cake Island"],
     habilidades: ["Haki de Armamento", "Karate del Mar"],
@@ -109,16 +108,17 @@ function App() {
 }
 
 function Cards(character) {
+  const baseUrl = import.meta.env.BASE_URL;
 
-  const sagaList = character.saga.map((saga, index) => <li>{saga}</li>);
+  const sagaList = character.saga.map((saga) => <li key={saga}>{saga}</li>);
 
-  const habilidadesList = character.habilidades.map((habilidad, index) => (
-    <li>{habilidad}</li>
+  const habilidadesList = character.habilidades.map((habilidad) => (
+    <li key={habilidad}>{habilidad}</li>
   ));
 
   const image =
     character.imagen !== undefined
-      ? character.imagen
+      ? `${baseUrl}${character.imagen}`
       : "https://placehold.co/400x300";
 
   return (
@@ -128,7 +128,10 @@ function Cards(character) {
       <div className="posterContent">
         <h2 className="dead">DEAD OR ALIVE</h2>
         <h3 className="name">
-          {character.nombre.toUpperCase().replaceAll(" ", "·").replaceAll(".", "")}
+          {character.nombre
+            .toUpperCase()
+            .replaceAll(" ", "·")
+            .replaceAll(".", "")}
         </h3>
         <div className="info">
           <p className="bounty">{character.bounty}</p>

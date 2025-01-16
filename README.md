@@ -6,10 +6,10 @@ Está práctica contiene los siguientes dos puntos de la documentación:
 
 Tal y como digo en cada una de estas prácticas orientadas al aprendizaje de React, debéis sí o sí, leeros la documentación antes de realizar el ejercicio. Es muy importante que lo hagáis así para poder afianzar los conceptos bien. Este ejemplo se basará en el que yo os puse en el ejercicio 3 del examen al principio del trimestre y que ya os he hecho con react en clase.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > __OJO__, Me tendréis que entregar la solución mediante use de __JS Nativo__ y mediante el uso de __React__.
 
-## Enunciado:
+## Enunciado
 
 Al igual que en el ejercicio 3 del examen, deberás desplegar en un grid la siguiente información de personajes de _OnePiece_, esto se debe hacer mediante el uso de componentes y la función map.
 
@@ -77,6 +77,5 @@ const characters = [
   },
 ]; 
 ```
-
 
 Se pide que añadas la función map con su respectivo key en cada div. La visualización de las tarjetas NO debe estar controlada por el botón de mostrar.
